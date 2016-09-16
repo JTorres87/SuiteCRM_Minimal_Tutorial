@@ -97,6 +97,9 @@ Should look something like:
 
 So go to command line and enter crontab -e (MAKE SURE TO BACKUP CRONTAB as -r and -e are right next to eachother, and -r deletes the crontab....and I have done it before and it sucks to not back it up)vim cron
 ```
-cp /var
+mkdir ~/crontabs
+cp /var/spool/cron/USERCRONTABFILE ~/crontabs/USERCRONTABFILE.bak
+```
 
+Follow the Configuration and enter setting accordingly. If you have a primary smtp email to send rom set tha tup here as well.
 
