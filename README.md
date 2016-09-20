@@ -1,23 +1,23 @@
 # SuiteCRM_Minimal_Tutorial
 SuiteCRM Install from Scratch
 
-Start by preparing a minimal CentOS 7 environment. You may get a pefectly great environment for about $5 bucks a month from VULTR.
-Please use my refferal link as a donation if you are to use them. You can pick from 14 Datacenters around the world and instantly start a VPS securely with automatic backups and DDOS Protection.
+Start by preparing a minimal CentOS 7 environment. You may get a perfectly great environment for about $5 bucks a month from VULTR.
+Please use my referral link as a donation if you are to use them. You can pick from 14 Datacenters around the world and instantly start a VPS securely with automatic backups and DDOS Protection.
 
 [http://www.vultr.com/?ref=6879438](http://www.vultr.com/?ref=6879438)
 
 
-For a decent tutorial on how to set up a minimal CentOS7 environment follor the link below.
+For a decent tutorial on how to set up a minimal CentOS7 environment follow the link below.
 https://www.howtoforge.com/apache_php_mysql_on_centos_7_lamp
 
-The only exception to the tutorial above I wold usggest is to USE php-mysqlnd instead of php-mysql. The php module has better peformance and can be configured to use php-mysqlnd_ms. This is useful for MASTER/SLAVE environment with the crm. This is useful for advanced database load management.
+The only exception to the tutorial above I wold suggest is to USE php-mysqlnd instead of php-mysql. The PHP module has better performance and can be configured to use php-mysqlnd_ms. This is useful for MASTER/SLAVE environment with the CRM. This is useful for advanced database load management.
 
-Get a FREE SSL certificate utilizing certbot. The Electronic Frontier Foundation is pushing for everyone to encrypt! Its good, protect your server.
+Get a FREE SSL certificate utilizing certbot. The Electronic Frontier Foundation is pushing for everyone to encrypt! It's good, protect your server.
 Learn more at https://letsencrypt.org/ and https://certbot.eff.org/
 
-For security reasons I would sugges tto setup the vultr VPS with a KEY for SSH instead of a password and to only allow phpmyadmin access from your IP. If you have a static IP. You can even get creative and only allow PHPMyAdmin access from LOCALHOST and use an ssh tunnel with putty.
+For security reasons, I would suggest to setup the vultr VPS with a KEY for SSH instead of a password and to only allow PHPMyAdmin access from your IP. If you have a static IP. You can even get creative and only allow PHPMyAdmin access from LOCALHOST and use an ssh tunnel with putty.
 
-Once you have the environmetn setup we will start the TUT.
+Once you have the environment setup, we will start the TUT.
 
 You can use PUTTY and puttygen to connect to your server.
 
@@ -53,7 +53,7 @@ cd ~/download
 wget https://github.com/salesagility/SuiteCRM/archive/master.zip
 ```
 
-Extract to /var/www/html/devcrm or your appropiate directory in which you woul dlike the CRM to reside.
+Extract to /var/www/html/devcrm or your appropiate directory in which you would like the CRM to reside.
 
 ```
 yum install unzip
@@ -66,9 +66,9 @@ Next we move the SuiteCRM-master contents up a directory
  rm -rfv /var/www/html/devcrm/SuiteCRM-master
 ```
 
-Go to phpmyadmin and create a Database
+Go to PHPMyAdmin and create a Database
 USERS>add user
-Username: Whatevr you want
+Username: What ever you want
 Host:Local
 Password: Generate one
 
@@ -86,10 +86,10 @@ chmod -R 775 cache custom modules themes data upload config_override.php
 
 ```
 
-Go to YOURDOMAIN.TLD/YOURCRMDIRECTORY to begin the isntallation process.
+Go to YOURDOMAIN.TLD/YOURCRMDIRECTORY to begin the installation process.
 Click "I Agree" and then click "Next"
 
-Ensure all system checks are "OK" or you will have issues with the installation. On the system check screen you will find the corn job that needs to be setup to run.
+Ensure all system checks are "OK" or you will have issues with the installation. On the system check screen you will find the cron job that needs to be setup to run.
 
 Should look something like:
 ```
@@ -102,5 +102,5 @@ mkdir ~/crontabs
 cp /var/spool/cron/USERCRONTABFILE ~/crontabs/USERCRONTABFILE.bak
 ```
 
-Follow the Configuration and enter setting accordingly. If you have a primary smtp email to send rom set tha tup here as well.
+Follow the Configuration and enter setting accordingly. If you have a primary smtp email to send from set that up here as well.
 
