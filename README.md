@@ -38,6 +38,7 @@ max_execution_time = 300
 error_reporting = E_ALL & ~E_NOTICE
 post_max_size = 64M
 upload_max_filesize = 64M
+display_errors = Off
 ```
 
 Restart apache
